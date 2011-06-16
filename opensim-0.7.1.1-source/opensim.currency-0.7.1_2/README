@@ -1,0 +1,139 @@
+
+////////////////////////////////////////////////////////////////////////////////////////////
+//
+//  DTL/NSL Money Server for OpenSim 0.7.x for Linux/Unix
+//                                                        by Fumi.Iseki and NSL '11 5/7
+//                                                        http://www.nsl.tuis.ac.jp
+
+
+
+0. Outline
+
+ This Money Server is modified version of DTL Currency Processing (http://forge.opensimulator.org/gf/project/currency/).
+ As for this, some bug fixes and some functionality expansions are done. And this can be operated by OpenSim 0.7.x. 
+ But, Web Monitor function (ASP.NET) is removed from original DTL Currency. So, this version is less secure than original 
+ version!! Please use this at Your Own Risk!!
+
+
+
+1. Install
+
+ # cd opensim-0.7.x-source
+ # tar xzfv opensim.currency-0.7.x.tar.gz 
+ # patch -p1 < opensim.currency-0.7.x/opensim_currency_0.7.x.patch
+ # ./runprebuild.sh && nant clean && nant
+ # cd opensim.currency-0.7.x
+ # ./build.sh
+
+
+
+2. Setting
+
+2-1. Money Server
+
+ # cd opensim-0.7.x-source
+ # vi bin/MoneyServer.ini 
+
+  - Plese set hostname, database, username and password of MySQL at [MySql] section.
+  - If you use Banker Avatar, please set UUID of Banker Avatar to "BankerAvatar" in MoneyServer.ini.
+    Banker Avatar can buy money from system with no cost.
+	When 00000000-0000-0000-0000-000000000000 is specified as UUID, all avatars can get money from system.
+  - If you want to normally use llGiveMoney() function even when payer doesn't login to Opensim,
+	you must set "true" to "enableForceTransfer" in MoneyServer.ini.
+  - If you want to send money to anotger avatar by PHP script, you must set "true" to "enableScriptSendMoney"
+	And please set "MoneyScriptAccessKey" and "MoneyScriptIPaddress", too.
+	"MoneyScriptAccessKey" is Secret key of Helper Script. Specify same key in include/config.php or WI(XoopenSim/Modlos)
+	"MoneyScriptIPaddress" is IP address of server that Helper Script execute at. Not specify 127.0.0.1. 
+  - If you want to change Update Balance Messages (blue dialog), pleaase enable and rewrite "BalanceMessage..." valiables.
+
+
+2-2. Region Server
+
+ # cd opensim-0.7.x-source
+ # vi bin/OpenSim.ini 
+
+ [Economy]
+   SellEnabled = "true"
+   CurrencyServer = "https://(MoneyServer's Name or IP):8008/"  
+   EconomyModule  = DTLMoneyModule
+   UserServer = "http://(MoneyServer's Name or IP):8003/"
+
+   ;; Money Unit fee to upload textures, animations etc
+   PriceUpload = 10
+
+   ;; Money Unit fee to create groups
+   PriceGroupCreate = 100
+
+
+ Attention) 
+   Not use 127.0.0.1 or localhost for UserServer's address and CurrencyServer's address. 
+   This address is used for identification of user on Money Server.
+
+
+2-3. Helper Script
+
+  - If you do not use XoopenSim or Modlos (Web Interface), you should setup helper scripts by manual.
+  - Please copy Scripts/* to any Web contents directory, and edit ENV_HELPER_URL, ENV_HELPER_PATH and DB information
+    in include/config.php 
+
+ ex.)
+ # mkdir /var/www/currency
+ # cp -R Scripts/* /var/www/currency
+ # cd /var/www/currency
+ # chown -R www-data.www-data .
+ # vi include/config.php
+
+  - Please execute viewer with "-helperuri [ENV_HELPER_URL/]" option. 
+    Here, ENV_HELPER_URL is helper directory url in include/config.php.
+  - ex.) -helperuri http://localhost/currency/helper/   need last '/'
+
+
+
+3. Execution
+
+3-1. Money Server
+
+ # cd opensim-0.7.x-source
+ # cd bin
+ # mono OpenSim.Grid.MoneyServer.exe
+
+
+3-2. Region Server
+
+ # cd opensim-0.7.x-source
+ # cd bin
+ # mono OpenSim.exe
+
+
+
+4. License.
+
+ This software conforms to the license of DTL Currency Processing.
+ Please see also http://forge.opensimulator.org/gf/project/currency/
+
+
+
+5. Attention.
+
+ This is unofficial software. Please do not inquire to OpenSim development team or DTL Currency Processing 
+ development team about this software. 
+
+
+
+6. Exemption from responsibility.
+
+ This software is not guaranteed at all. The author doesn't assume the responsibility for the
+ problem that occurs along with use, remodeling, and the re-distribution of this software at all.
+ Please use everything by the self-responsibility.
+
+
+
+7. Address of thanks.
+
+ This Money Server is modified version of DTL Currency Processing.
+ Please see also http://forge.opensimulator.org/gf/project/currency/
+
+ About this project, Milo did a lot of advice and donation to us. 
+
+ Thank you very much!!
+

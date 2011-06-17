@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/osprofile/!svn/ver/78/trunk/webroot/sql
+END
+osprofile.sql
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/osprofile/!svn/ver/69/trunk/webroot/sql/osprofile.sql
+END
+update-usernotes.sql
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/osprofile/!svn/ver/78/trunk/webroot/sql/update-usernotes.sql
+END
+update-userprofile.sql
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/osprofile/!svn/ver/69/trunk/webroot/sql/update-userprofile.sql
+END

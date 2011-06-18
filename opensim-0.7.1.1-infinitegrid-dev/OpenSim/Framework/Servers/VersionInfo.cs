@@ -30,7 +30,8 @@ namespace OpenSim
     public class VersionInfo
     {
         private const string VERSION_NUMBER = "0.7.1.1";
-        private const Flavour VERSION_FLAVOUR = Flavour.Release;
+	private const string VERSION_MINOR = "03";
+        private const Flavour VERSION_FLAVOUR = Flavour.InfiniteGrid;
 
         public enum Flavour
         {
@@ -39,17 +40,18 @@ namespace OpenSim
             RC1,
             RC2,
             Release,
-            Post_Fixes
+            Post_Fixes,
+	    InfiniteGrid
         }
 
         public static string Version
         {
-            get { return GetVersionString(VERSION_NUMBER, VERSION_FLAVOUR); }
+            get { return GetVersionString(VERSION_NUMBER, VERSION_FLAVOUR, VERSION_MINOR); }
         }
 
-        public static string GetVersionString(string versionNumber, Flavour flavour)
+        public static string GetVersionString(string versionNumber, Flavour flavour, string versionMinor)
         {
-            string versionString = "OpenSim " + versionNumber + " " + flavour;
+            string versionString = "OpenSim " + versionNumber + " " + flavour + " Build " + versionMinor;
             return versionString.PadRight(VERSIONINFO_VERSION_LENGTH);
         }
 

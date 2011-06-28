@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9E63AAD3-0000-0000-0000-000000000000}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>OpenSim.Server.Handlers</AssemblyName>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>
+    </AppDesignerFolder>
+    <RootNamespace>OpenSim.Server.Handlers</RootNamespace>
+    <StartArguments>
+    </StartArguments>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <BaseAddress>285212672</BaseAddress>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\bin\</OutputPath>
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <RemoveIntegerChecks>False</RemoveIntegerChecks>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>full</DebugType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <BaseAddress>285212672</BaseAddress>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <FileAlignment>4096</FileAlignment>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\bin\</OutputPath>
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <RemoveIntegerChecks>False</RemoveIntegerChecks>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>none</DebugType>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <Name>System</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Web">
+      <Name>System.Web</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.Xml</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DotNetOpenId, Version=2.6.0.8354, Culture=neutral, PublicKeyToken=null">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\lib\DotNetOpenId.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\lib\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Nini, Version=1.1.0.0, Culture=neutral, PublicKeyToken=null">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\lib\Nini.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenMetaverse, Version=0.9.0.29631, Culture=neutral, PublicKeyToken=null">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\lib\OpenMetaverse.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenMetaverse.StructuredData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\lib\OpenMetaverse.StructuredData.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenMetaverseTypes, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\lib\OpenMetaverseTypes.dll</HintPath>
+    </Reference>
+    <Reference Include="XMLRPC, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\lib\XMLRPC.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Framework\OpenSim.Framework.csproj">
+      <Project>{7404933D-0000-0000-0000-000000000000}</Project>
+      <Name>OpenSim.Framework</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Framework\Console\OpenSim.Framework.Console.csproj">
+      <Project>{16759386-0000-0000-0000-000000000000}</Project>
+      <Name>OpenSim.Framework.Console</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Framework\Servers\HttpServer\OpenSim.Framework.Servers.HttpServer.csproj">
+      <Project>{1CBD339A-0000-0000-0000-000000000000}</Project>
+      <Name>OpenSim.Framework.Servers.HttpServer</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\Base\OpenSim.Server.Base.csproj">
+      <Project>{2052E43B-0000-0000-0000-000000000000}</Project>
+      <Name>OpenSim.Server.Base</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Services\Base\OpenSim.Services.Base.csproj">
+      <Project>{403A1840-0000-0000-0000-000000000000}</Project>
+      <Name>OpenSim.Services.Base</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Services\Interfaces\OpenSim.Services.Interfaces.csproj">
+      <Project>{E1873C89-0000-0000-0000-000000000000}</Project>
+      <Name>OpenSim.Services.Interfaces</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Asset\AssetServerConnector.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Asset\AssetServerDeleteHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Asset\AssetServerGetHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Asset\AssetServerPostHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Authentication\AuthenticationServerConnector.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Authentication\AuthenticationServerPostHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Authentication\OpenIdServerConnector.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Authentication\OpenIdServerHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Authorization\AuthorizationServerConnector.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Authorization\AuthorizationServerPostHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Avatar\AvatarServerConnector.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Avatar\AvatarServerPostHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Base\ServerConnector.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Base\Utils.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Freeswitch\FreeswitchServerConnector.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Friends\FriendServerConnector.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Friends\FriendsServerPostHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Grid\GridInfoHandlers.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Grid\GridInfoServerInConnector.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Grid\GridServerConnector.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Grid\GridServerPostHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GridUser\GridUserServerConnector.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GridUser\GridUserServerPostHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Hypergrid\AgentHandlers.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Hypergrid\GatekeeperServerConnector.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Hypergrid\HGFriendServerConnector.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Hypergrid\HGFriendsServerPostHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Hypergrid\HeloServerConnector.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Hypergrid\HomeAgentHandlers.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Hypergrid\HypergridHandlers.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Hypergrid\InstantMessageServerConnector.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Hypergrid\UserAgentServerConnector.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Inventory\InventoryServerInConnector.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Inventory\InventoryServerMoveItemsHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Inventory\XInventoryInConnector.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Land\LandHandlers.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Land\LandServiceInConnector.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Login\LLLoginHandlers.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Login\LLLoginServiceInConnector.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Map\MapAddServerConnector.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Map\MapGetServerConnector.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Neighbour\NeighbourHandlers.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Neighbour\NeighbourServiceInConnector.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Presence\PresenceServerConnector.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Presence\PresenceServerPostHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Simulation\AgentHandlers.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Simulation\ObjectHandlers.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Simulation\SimulationServiceInConnector.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Simulation\Utils.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UserAccounts\UserAccountServerConnector.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UserAccounts\UserAccountServerPostHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSHARP.Targets" />
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

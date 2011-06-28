@@ -70,6 +70,4 @@ TAGS
 Makefile.local
 bin/.version
 compile.bat
-
-/InfiniteGrid-Opensim.sln
 /bin

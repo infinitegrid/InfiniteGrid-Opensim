@@ -1,2 +1,0 @@
-
-1.  Post build script to delete all the crap OS leaves all over.  Use .gitignore from ossource as a template for what is unneeded.

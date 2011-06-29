@@ -185,4 +185,7 @@
     <PostBuildEvent>
     </PostBuildEvent>
   </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="lib-config\" />
+  </ItemGroup>
 </Project>

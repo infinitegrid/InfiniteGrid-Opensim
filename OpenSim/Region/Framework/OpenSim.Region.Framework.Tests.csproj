@@ -109,12 +109,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="../../Framework/Communications/OpenSim.Framework.Communications.csproj">
-      <Name>OpenSim.Framework.Communications</Name>
-      <Project>{7667FA4E-0000-0000-0000-000000000000}</Project>
-      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
-      <Private>False</Private>
-    </ProjectReference>
     <ProjectReference Include="..\..\Data\OpenSim.Data.csproj">
       <Project>{B75A430B-0000-0000-0000-000000000000}</Project>
       <Name>OpenSim.Data</Name>

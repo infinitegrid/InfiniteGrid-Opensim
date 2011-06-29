@@ -80,12 +80,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="../ScriptEngine/Shared/OpenSim.Region.ScriptEngine.Shared.csproj">
-      <Name>OpenSim.Region.ScriptEngine.Shared</Name>
-      <Project>{D38C6D2D-0000-0000-0000-000000000000}</Project>
-      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
-      <Private>False</Private>
-    </ProjectReference>
     <ProjectReference Include="..\..\Framework\OpenSim.Framework.csproj">
       <Project>{7404933D-0000-0000-0000-000000000000}</Project>
       <Name>OpenSim.Framework</Name>
